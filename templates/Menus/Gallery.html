@@ -1,0 +1,17 @@
+{% extends "Menus/Index.html" %}
+
+{% block title %} Gallery | Rotaract Club of PES University {% endblock %}
+
+{% block nav-gallery %}
+    <strong class="nav-active">Gallery</strong>
+{% endblock %}
+
+{% block gallery %} 
+
+{% for Gallery in images %}
+<div class="gallery">
+    <img src="{{Gallery.Image.url}}">
+</div>
+{% endfor %}
+
+{% endblock %}

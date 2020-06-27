@@ -1,0 +1,27 @@
+{% extends "Menus//Index.html" %}
+
+{% load static %}
+
+{% block title %} Team | Rotaract Club of PES University {% endblock %}
+
+{% block nav-team %}
+    <strong class="nav-active">Our Team</strong>
+{% endblock %}
+
+{% block team %} 
+
+{% for Team in card %}
+<div class="cards">
+  <div class="image">
+     <img src="{{Team.Image.url}}">
+  </div>
+  <div class="cardtit">
+   <p>{{Team.Name}}</p>
+  </div>
+  <div class="carddes">
+   <p>{{Team.Position}}</p>
+  </div>
+</div>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "Menus//Index.html" %}
+
+{% block title %} Events | Rotaract Club of PES University {% endblock %}
+
+{% block nav-events %}
+    <strong class="nav-active">Events</strong>
+{% endblock %}
+
+{% block events %}
+
+{% for Event in event %}
+
+    <div class="rows">
+        <div class="cardeve">
+            <img src="{{Event.Image.url}}" class="card-img-top" alt="{{Event.Name}}">
+            <div class="card-body">
+                <h5 class="card-title">{{Event.Name}}</h5>
+                <p class="card-text">{{Event.description}}</p>
+            </div>
+        </div>
+    </div>
+
+
+{% endfor %}
+
+{% endblock %}

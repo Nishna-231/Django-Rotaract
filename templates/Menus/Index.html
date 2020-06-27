@@ -1,0 +1,140 @@
+{% load static %}
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="{% static 'Menus/css/style.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+    crossorigin="anonymous"></script>
+
+    <title>{% block title %} {% endblock %}</title>
+
+    <style>
+
+      carousel-caption{
+        color: white;
+      }
+
+      footer a:hover{
+        color: white;
+        text-decoration: none;
+      }
+
+    </style>
+
+<script>
+  $(function() {
+  $(".toggle").on("click", function() {
+      if ($(".item").hasClass("active")) {
+          $(".item").removeClass("active");
+      } else {
+          $(".item").addClass("active");
+      }
+  });
+});
+
+
+</script>
+     
+  </head>
+  <body>
+  
+    
+
+            <nav class="navbar navbar-expand-md navbar-light bg-white">
+
+              <!-- <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm"> -->
+              <a class="navbar-brand" href="https://www.pes.edu/"><img src="{% static 'Menus/Images/PES.png' %}" class="PES"></a>
+              <a class="navbar-brand"href=""><img src="{% static 'Menus/Images/Rotaract.jpg' %}" class="Rotaract"> </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">{% block nav-home %}<a class="nav-link" href="{% url 'Menus:home' %}">Home</a>{% endblock %}</li>
+            <li class="nav-item">{% block nav-about %}<a class="nav-link" href="{% url 'Menus:about' %}">About</a>{% endblock %}</li>
+            <li class="nav-item">{% block nav-team %}<a class="nav-link" href="{% url 'Menus:team' %}">Our Team</a>{% endblock %}</li>
+            <li class="nav-item">{% block nav-events %}<a class="nav-link" href="{% url 'Menus:events' %}">Events</a>{% endblock %}</li>
+            <li class="nav-item">{% block nav-gallery %}<a class="nav-link" href="{% url 'Menus:gallery' %}">Gallery</a>{% endblock %}</li>
+            <li class="nav-item">{% block nav-contact %}<a class="nav-link" href="{% url 'Menus:contact' %}">Contact</a>{% endblock %}</li>
+                </ul>
+              </div>
+            </nav>
+
+
+    {% block slide %} {% endblock %}
+
+    {% block gallery %} {% endblock %}
+
+    {% block events %} {% endblock %}
+
+    {% block team %} {% endblock %}
+
+    {% block about %} {% endblock %}
+
+    {% block contact %} {% endblock %}
+
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem reiciendis, ratione quae sequi, iusto eum sint ipsam voluptatibus repellat autem cum repellendus corporis dolore, beatae est voluptate odio vel officiis!</p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Categories</h6>
+            <ul class="footer-links">
+              <li><a href="#"></a></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Our Team</a></li>
+              <li><a href="#">Events</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by 
+         <a href="#">Rotaract Club of PES University</a>.
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
+        </div>
+      </div>
+</footer>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>
